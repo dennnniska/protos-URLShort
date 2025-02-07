@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "shortUrl.v1;shortUrl";
+
+service ShortUrl{
+    rpc GET(GetRequest) returns (GetResponse);
+    rpc Post(PostRequest) returns (PostResponse);
+}
+
+message GetRequest{
+    string ShortUrl = 1;
+}
+
+message GetResponse{
+    string Url = 1;
+}
+
+message PostResponse{
+    string ShortUrl = 1;
+}
+
+message PostRequest{
+    string Url = 1;
+}
